@@ -1,0 +1,20 @@
+<main>
+  <header class="container">
+    <app-header [itemNumbers]="itemNumbers"></app-header>
+  </header>
+
+  <section class="container">
+    <app-products
+      [productList]="products"
+      (updateQuantity)="updateQuantity($event)"
+      (removePr)="removeProduct($event)"
+    ></app-products>
+  </section>
+
+  <section class="container">
+    <app-checkout [subTotal]="subTotal"
+                  [discount]="discount"
+                  (promoCode)="handlePromoCode($event)"
+    ></app-checkout>
+  </section>
+</main>
